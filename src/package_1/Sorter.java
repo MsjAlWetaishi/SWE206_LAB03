@@ -16,7 +16,7 @@ public class Sorter {
 
         Collections.shuffle(list);
         System.out.println(list);
-        Sort(list);
+
 
 
 
@@ -56,9 +56,6 @@ public class Sorter {
         }
         return list;
     }
-    public static void Sort(ArrayList<Integer> list){
-        insertionSort(list);
-        System.out.println(list);
-    }
+
 
 }
