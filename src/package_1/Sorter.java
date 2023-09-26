@@ -14,9 +14,18 @@ public class Sorter {
         selectionSort(list);
         System.out.println("After Sorting: " + list);
 
+        System.out.println("-------------------");
+
+        System.out.println("Insertion");
         Collections.shuffle(list);
         System.out.println(list);
-        Sort(list);
+        SortInsertion(list);
+
+        System.out.println("Selection");
+
+        Collections.shuffle(list);
+        System.out.println(list);
+        SortSelection(list);
 
 
 
@@ -57,8 +66,12 @@ public class Sorter {
         }
         return list;
     }
+    public static void SortInsertion(ArrayList<Integer> list){
+        insertionSort(list);
+        System.out.println(list);
+    }
 
-    public static void Sort(ArrayList<Integer> list){
+    public static void SortSelection(ArrayList<Integer> list){
         selectionSort(list);
         System.out.println(list);
     }
