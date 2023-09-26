@@ -16,7 +16,7 @@ public class Sorter {
 
         Collections.shuffle(list);
         System.out.println(list);
-
+        Sort(list);
 
 
 
@@ -55,6 +55,10 @@ public class Sorter {
             list.set(j + 1, key);
         }
         return list;
+    }
+    public static void Sort(ArrayList<Integer> list){
+        insertionSort(list);
+        System.out.println(list);
     }
 
 
