@@ -3,21 +3,26 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Sorter {
-    public static void main(String args[]){
+    public static void main(String args[]) {
         ArrayList<Integer> list = new ArrayList<>();
-        for(int i=1 ; i <= 10 ; i++){
+        for (int i = 1; i <= 10; i++) {
             list.add(i);
         }
         Collections.shuffle(list);
-        
-        System.out.println("Before Sorting: "+ list);
+
+        System.out.println("Before Sorting: " + list);
         selectionSort(list);
-        System.out.println("After Sorting: "+list);
-        
+        System.out.println("After Sorting: " + list);
+
+        Collections.shuffle(list);
+        System.out.println("Before Sorting: " + list);
+        insertionSort(list);
+        System.out.println("After Sorting: " + list);
+
 
     }
 
-    public static ArrayList<Integer> selectionSort(ArrayList<Integer> list){
+    public static ArrayList<Integer> selectionSort(ArrayList<Integer> list) {
         for (int i = 0; i < list.size() - 1; i++) {
             // Assume the current element is the minimum
             int minIndex = i;
@@ -36,4 +41,20 @@ public class Sorter {
         }
         return list;
     }
+
+    public static ArrayList<Integer> insertionSort(ArrayList<Integer> list) {
+        int n = list.size();
+        for (int i = 1; i < n; i++) {
+            int key = list.get(i);
+            int j = i - 1;
+
+            while (j >= 0 && list.get(j) > key) {
+                list.set(j + 1, list.get(j));
+                j = j - 1;
+            }
+            list.set(j + 1, key);
+        }
+        return list;
+    }
+
 }
